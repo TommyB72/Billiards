@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dmrbw055fj7tp"]
+
+[ext_resource type="PackedScene" uid="uid://m6aytjbqtkd3" path="res://Models/pool_table.blend" id="1_wbfu4"]
+
+[sub_resource type="Environment" id="Environment_wbfu4"]
+
+[node name="Node3D" type="Node3D" unique_id=1464886543]
+
+[node name="pool_table" parent="." unique_id=495625143 instance=ExtResource("1_wbfu4")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1585903093]
+transform = Transform3D(1, 0, 0, 0, 0.7278326, 0.6857549, 0, -0.6857549, 0.7278326, 0, 0.8955487, 1.6795734)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1696173732]
+environment = SubResource("Environment_wbfu4")
