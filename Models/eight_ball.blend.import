@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bcq4c3dk8djde"
+uid="uid://c8k0awkk6unpx"
 path="res://.godot/imported/eight_ball.blend-1b6c380f4a9c1e6190c26a7c9bd9a729.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/eight_ball.blend-1b6c380f4a9c1e6190c26a7c9bd9
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
@@ -37,7 +37,16 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Sphere": {
+"generate/physics": true,
+"node/script": Resource("uid://baqb5okual1qc", "res://Scripts/ball.gd"),
+"physics/body_type": 1,
+"physics/shape_type": 4
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

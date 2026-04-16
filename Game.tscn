@@ -1,15 +1,32 @@
 [gd_scene format=3 uid="uid://dmrbw055fj7tp"]
 
 [ext_resource type="PackedScene" uid="uid://m6aytjbqtkd3" path="res://Models/pool_table.blend" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://c8k0awkk6unpx" path="res://Models/eight_ball.blend" id="2_xkndl"]
 
-[sub_resource type="Environment" id="Environment_wbfu4"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xkndl"]
+sky_top_color = Color(0.7767421, 0.818166, 0.8726945, 1)
+sky_energy_multiplier = 2.5
+
+[sub_resource type="Sky" id="Sky_xkndl"]
+sky_material = SubResource("ProceduralSkyMaterial_xkndl")
+
+[sub_resource type="Environment" id="Environment_xkndl"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_xkndl")
 
 [node name="Node3D" type="Node3D" unique_id=1464886543]
 
-[node name="pool_table" parent="." unique_id=495625143 instance=ExtResource("1_wbfu4")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1597514723]
+environment = SubResource("Environment_xkndl")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1585903093]
 transform = Transform3D(1, 0, 0, 0, 0.7278326, 0.6857549, 0, -0.6857549, 0.7278326, 0, 0.8955487, 1.6795734)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1696173732]
-environment = SubResource("Environment_wbfu4")
+[node name="pool_table" parent="." unique_id=2015899724 instance=ExtResource("1_wbfu4")]
+
+[node name="eight_ball" parent="." unique_id=1281778552 instance=ExtResource("2_xkndl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16287947, 0)
+
+[editable path="pool_table"]
+[editable path="eight_ball"]
