@@ -23,9 +23,9 @@ environment = SubResource("Environment_xkndl")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1585903093]
 transform = Transform3D(1, 0, 0, 0, 0.7278326, 0.6857549, 0, -0.6857549, 0.7278326, 0, 0.8955487, 1.6795734)
 
-[node name="pool_table" parent="." unique_id=2015899724 instance=ExtResource("1_wbfu4")]
+[node name="pool_table" parent="." unique_id=736480375 instance=ExtResource("1_wbfu4")]
 
-[node name="eight_ball" parent="." unique_id=1281778552 instance=ExtResource("2_xkndl")]
+[node name="eight_ball" parent="." unique_id=206790162 instance=ExtResource("2_xkndl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16287947, 0)
 
 [editable path="pool_table"]
