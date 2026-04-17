@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://m6aytjbqtkd3" path="res://Models/pool_table.blend" id="1_wbfu4"]
 [ext_resource type="PackedScene" uid="uid://c8k0awkk6unpx" path="res://Models/eight_ball.blend" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://bos0xlp2uqasy" path="res://Models/pool_stick.blend" id="3_sb48q"]
-[ext_resource type="Script" uid="uid://bjs26vafhckpc" path="res://Scripts/delete_box.gd" id="3_u44n3"]
 [ext_resource type="PackedScene" uid="uid://cqq5djfnn8dc3" path="res://Models/fifteen_ball.blend" id="6_r0x5m"]
 [ext_resource type="PackedScene" uid="uid://ct30260nilfhp" path="res://Models/eleven_ball.blend" id="7_3mrqo"]
 [ext_resource type="PackedScene" uid="uid://cn4sc72a0vkku" path="res://Models/cue_ball.blend" id="8_joorw"]
@@ -25,7 +24,10 @@ sky = SubResource("Sky_xkndl")
 bounce = 0.53
 absorbent = true
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_xkndl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_joorw"]
+size = Vector3(1.3591614, 0.10397339, 2.7417145)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2vekm"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_joorw"]
 
@@ -47,11 +49,19 @@ physics_material_override = SubResource("PhysicsMaterial_xkndl")
 [node name="DeleteBox" type="Area3D" parent="." unique_id=29320391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 collision_layer = 0
-collision_mask = 2
-script = ExtResource("3_u44n3")
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeleteBox" unique_id=1021286074]
-shape = SubResource("WorldBoundaryShape3D_xkndl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012054443, 0.3058319, 0.0051345825)
+shape = SubResource("BoxShape3D_joorw")
+
+[node name="ResetPlane" type="Area3D" parent="." unique_id=1771640366]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetPlane" unique_id=846584434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28007194, 0)
+shape = SubResource("WorldBoundaryShape3D_2vekm")
 
 [node name="pool_stick" parent="." unique_id=1328797338 instance=ExtResource("3_sb48q")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.214, 0, -0.423)
@@ -76,16 +86,17 @@ shape = SubResource("WorldBoundaryShape3D_joorw")
 
 [node name="Balls" type="Node3D" parent="." unique_id=474745401]
 
-[node name="eight_ball" parent="Balls" unique_id=791652122 instance=ExtResource("2_xkndl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13788718, 0.04988873, 0.021389186)
-
-[node name="fifteen_ball" parent="Balls" unique_id=420801411 instance=ExtResource("6_r0x5m")]
+[node name="fifteen_ball" parent="Balls" unique_id=2000621858 instance=ExtResource("6_r0x5m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193, 0, 0)
 
-[node name="eleven_ball" parent="Balls" unique_id=2087538441 instance=ExtResource("7_3mrqo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272, 0, 0)
+[node name="eleven_ball" parent="Balls" unique_id=2082427804 instance=ExtResource("7_3mrqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31517667, 0, 0)
 
-[connection signal="body_entered" from="DeleteBox" to="DeleteBox" method="_on_body_entered"]
+[node name="eight_ball" parent="Balls" unique_id=1384042678 instance=ExtResource("2_xkndl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08207503, 0, 0)
+
+[connection signal="body_entered" from="DeleteBox" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ResetPlane" to="." method="BallEnteredResetPlane"]
 [connection signal="body_entered" from="pool_stick/Area3D" to="pool_stick/Cylinder" method="_on_area_3d_body_entered"]
 
 [editable path="cue_ball"]
