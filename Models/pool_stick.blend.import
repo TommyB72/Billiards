@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/pool_stick.blend-0275f4a93ade95f94c778cfed01e
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/root_script=null
+nodes/root_script=Resource("uid://e8ns700mfvn1", "res://Scripts/pool_stick.gd")
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

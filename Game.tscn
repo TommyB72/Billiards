@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dmrbw055fj7tp"]
 
+[ext_resource type="Script" uid="uid://5dhknrco2lgf" path="res://Scripts/game.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://m6aytjbqtkd3" path="res://Models/pool_table.blend" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://c8k0awkk6unpx" path="res://Models/eight_ball.blend" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://bos0xlp2uqasy" path="res://Models/pool_stick.blend" id="3_sb48q"]
 [ext_resource type="Script" uid="uid://bjs26vafhckpc" path="res://Scripts/delete_box.gd" id="3_u44n3"]
+[ext_resource type="PackedScene" uid="uid://cqq5djfnn8dc3" path="res://Models/fifteen_ball.blend" id="6_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://ct30260nilfhp" path="res://Models/eleven_ball.blend" id="7_3mrqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xkndl"]
 sky_top_color = Color(0.7767421, 0.818166, 0.8726945, 1)
@@ -20,31 +24,49 @@ sky = SubResource("Sky_xkndl")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_xkndl"]
 
-[node name="Node3D" type="Node3D" unique_id=1464886543]
+[node name="Game" type="Node3D" unique_id=1464886543 node_paths=PackedStringArray("balls")]
+script = ExtResource("1_sb48q")
+balls = NodePath("Balls")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1597514723]
 environment = SubResource("Environment_xkndl")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1585903093]
-transform = Transform3D(1, 0, 0, 0, 0.7278326, 0.6857549, 0, -0.6857549, 0.7278326, 0, 0.8955487, 1.6795734)
 
 [node name="pool_table" parent="." unique_id=736480375 instance=ExtResource("1_wbfu4")]
 
 [node name="StaticBody3D" parent="pool_table/Cube" parent_id_path=PackedInt32Array(736480375, 1384543234) index="0" unique_id=927552683]
 physics_material_override = SubResource("PhysicsMaterial_xkndl")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=29320391]
+[node name="DeleteBox" type="Area3D" parent="." unique_id=29320391]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_u44n3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1021286074]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeleteBox" unique_id=1021286074]
 shape = SubResource("WorldBoundaryShape3D_xkndl")
 
-[node name="pool_stick" parent="." unique_id=1512586717 instance=ExtResource("3_sb48q")]
+[node name="pool_stick" parent="." unique_id=518377402 node_paths=PackedStringArray("rigid") instance=ExtResource("3_sb48q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21386331, 0.49915606, -0.42316303)
+rigid = NodePath("Sphere")
 
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[node name="Sphere" parent="pool_stick" index="1" unique_id=1430351809]
+collision_layer = 0
+collision_mask = 4
+
+[node name="Camera3D" type="Camera3D" parent="pool_stick" unique_id=1585903093]
+transform = Transform3D(-1, -4.371139e-08, 7.5710346e-08, 0, 0.8660254, 0.5, -8.742278e-08, 0.5, -0.8660254, -0.004, 0.2, -0.5)
+
+[node name="Balls" type="Node3D" parent="." unique_id=474745401]
+
+[node name="eight_ball" parent="Balls" unique_id=890482881 instance=ExtResource("2_xkndl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38231105, 0)
+
+[node name="fifteen_ball" parent="Balls" unique_id=1142949357 instance=ExtResource("6_r0x5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19269729, 0.17791069, 0)
+
+[node name="eleven_ball" parent="Balls" unique_id=1749565339 instance=ExtResource("7_3mrqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27184784, 0.37013376, 0)
+
+[connection signal="body_entered" from="DeleteBox" to="DeleteBox" method="_on_body_entered"]
 
 [editable path="pool_table"]
 [editable path="pool_stick"]
