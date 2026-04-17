@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dmrbw055fj7tp"]
 
 [ext_resource type="PackedScene" uid="uid://m6aytjbqtkd3" path="res://Models/pool_table.blend" id="1_wbfu4"]
-[ext_resource type="PackedScene" uid="uid://c8k0awkk6unpx" path="res://Models/eight_ball.blend" id="2_xkndl"]
+[ext_resource type="PackedScene" uid="uid://bos0xlp2uqasy" path="res://Models/pool_stick.blend" id="3_sb48q"]
+[ext_resource type="Script" uid="uid://bjs26vafhckpc" path="res://Scripts/delete_box.gd" id="3_u44n3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xkndl"]
 sky_top_color = Color(0.7767421, 0.818166, 0.8726945, 1)
@@ -15,6 +16,10 @@ background_mode = 2
 background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_xkndl")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xkndl"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_xkndl"]
+
 [node name="Node3D" type="Node3D" unique_id=1464886543]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1597514723]
@@ -25,8 +30,21 @@ transform = Transform3D(1, 0, 0, 0, 0.7278326, 0.6857549, 0, -0.6857549, 0.72783
 
 [node name="pool_table" parent="." unique_id=736480375 instance=ExtResource("1_wbfu4")]
 
-[node name="eight_ball" parent="." unique_id=206790162 instance=ExtResource("2_xkndl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16287947, 0)
+[node name="StaticBody3D" parent="pool_table/Cube" parent_id_path=PackedInt32Array(736480375, 1384543234) index="0" unique_id=927552683]
+physics_material_override = SubResource("PhysicsMaterial_xkndl")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=29320391]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_u44n3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1021286074]
+shape = SubResource("WorldBoundaryShape3D_xkndl")
+
+[node name="pool_stick" parent="." unique_id=1512586717 instance=ExtResource("3_sb48q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21386331, 0.49915606, -0.42316303)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 
 [editable path="pool_table"]
-[editable path="eight_ball"]
+[editable path="pool_stick"]

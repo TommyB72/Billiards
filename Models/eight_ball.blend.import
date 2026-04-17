@@ -43,7 +43,9 @@ _subresources={
 "generate/physics": true,
 "node/script": Resource("uid://baqb5okual1qc", "res://Scripts/ball.gd"),
 "physics/body_type": 1,
-"physics/shape_type": 4
+"physics/layer": 2,
+"physics/shape_type": 4,
+"primitive/radius": 0.029
 }
 }
 }
