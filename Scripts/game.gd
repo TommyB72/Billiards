@@ -7,4 +7,5 @@ func _ready() -> void:
 		ball.tree_exited.connect(GetBallCount)
 
 func GetBallCount() -> void:
-	print(balls.get_child_count())
+	if balls.get_child_count() > 0: return
+	get_tree().call_deferred("change_scene_to_file","res://Game.tscn")
