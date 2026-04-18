@@ -62,7 +62,7 @@ radius = 0.031
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2vekm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bvhbk"]
-size = Vector3(0.2, 0.046, 0.2)
+size = Vector3(0.2, 0.06, 0.2)
 
 [node name="Game" type="Node3D" unique_id=1464886543 node_paths=PackedStringArray("balls")]
 script = ExtResource("1_sb48q")
@@ -159,7 +159,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pool_stick/Area3D" unique_id=47732363]
-transform = Transform3D(1, -2.0747848e-12, -1.2366681e-19, 0, -4.3709967e-08, 0.9999761, 0, -0.9999761, -4.3709967e-08, 2.1316282e-14, 5.6046323e-10, 0.012821972)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1316282e-14, 5.6046323e-10, 0.012821972)
 shape = SubResource("BoxShape3D_bvhbk")
 
 [node name="cue_ball" parent="." unique_id=1016835651 instance=ExtResource("8_joorw")]
