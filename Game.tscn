@@ -165,7 +165,7 @@ shape = SubResource("BoxShape3D_bvhbk")
 [node name="cue_ball" parent="." unique_id=1016835651 instance=ExtResource("8_joorw")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0.55)
 
-[node name="Sphere" parent="cue_ball" index="0" unique_id=1340379324]
+[node name="Sphere" parent="cue_ball" index="0" unique_id=1172387719]
 mass = 0.16
 angular_damp_mode = 1
 angular_damp = 2.0
@@ -175,92 +175,107 @@ angular_damp = 2.0
 [node name="one_ball" parent="Balls" unique_id=1416627045 instance=ExtResource("5_joorw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.55)
 
-[node name="Sphere" parent="Balls/one_ball" index="0" unique_id=1922792384]
+[node name="Sphere" parent="Balls/one_ball" index="0" unique_id=861503059]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="two_ball" parent="Balls" unique_id=801143120 instance=ExtResource("6_bvhbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, -0.6)
 
-[node name="Sphere" parent="Balls/two_ball" index="0" unique_id=1868064774]
+[node name="Sphere" parent="Balls/two_ball" index="0" unique_id=25945655]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="three_ball" parent="Balls" unique_id=365633313 instance=ExtResource("7_cpsxm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0, -0.6)
 
-[node name="Sphere" parent="Balls/three_ball" index="0" unique_id=505801197]
+[node name="Sphere" parent="Balls/three_ball" index="0" unique_id=894407425]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="four_ball" parent="Balls" unique_id=315166448 instance=ExtResource("8_hmewc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0, -0.65)
 
-[node name="Sphere" parent="Balls/four_ball" index="0" unique_id=1763412420]
+[node name="Sphere" parent="Balls/four_ball" index="0" unique_id=374822560]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="eight_ball" parent="Balls" unique_id=1926617307 instance=ExtResource("2_xkndl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
 
-[node name="Sphere" parent="Balls/eight_ball" index="0" unique_id=1347994745]
+[node name="Sphere" parent="Balls/eight_ball" index="0" unique_id=924234312]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="five_ball" parent="Balls" unique_id=492285959 instance=ExtResource("10_7ged1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, -0.65)
 
-[node name="Sphere" parent="Balls/five_ball" index="0" unique_id=1212673884]
+[node name="Sphere" parent="Balls/five_ball" index="0" unique_id=1858653876]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="six_ball" parent="Balls" unique_id=1799613868 instance=ExtResource("11_0mevm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0, -0.7)
 
-[node name="Sphere" parent="Balls/six_ball" index="0" unique_id=2079511604]
+[node name="Sphere" parent="Balls/six_ball" index="0" unique_id=1553612460]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="seven_ball" parent="Balls" unique_id=1601612389 instance=ExtResource("12_w2501")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, -0.7)
 
-[node name="Sphere" parent="Balls/seven_ball" index="0" unique_id=2061764299]
+[node name="Sphere" parent="Balls/seven_ball" index="0" unique_id=668773330]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="nine_ball" parent="Balls" unique_id=1688201494 instance=ExtResource("13_jsoai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0, -0.7)
 
-[node name="Sphere" parent="Balls/nine_ball" index="0" unique_id=600192726]
+[node name="Sphere" parent="Balls/nine_ball" index="0" unique_id=1865068799]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="ten_ball" parent="Balls" unique_id=380752460 instance=ExtResource("14_bisgb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0, -0.7)
 
-[node name="Sphere" parent="Balls/ten_ball" index="0" unique_id=455486920]
+[node name="Sphere" parent="Balls/ten_ball" index="0" unique_id=1584914662]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="eleven_ball" parent="Balls" unique_id=1703540467 instance=ExtResource("7_3mrqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0, -0.75)
 
-[node name="Sphere" parent="Balls/eleven_ball" index="0" unique_id=918717716]
+[node name="Sphere" parent="Balls/eleven_ball" index="0" unique_id=1209478019]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="twelve_ball" parent="Balls" unique_id=291407590 instance=ExtResource("16_y5ctq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0, -0.75)
 
-[node name="Sphere" parent="Balls/twelve_ball" index="0" unique_id=222181968]
+[node name="Sphere" parent="Balls/twelve_ball" index="0" unique_id=288701380]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="thirteen_ball" parent="Balls" unique_id=77629970 instance=ExtResource("17_w7ht3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
 
-[node name="Sphere" parent="Balls/thirteen_ball" index="0" unique_id=1047047126]
+[node name="Sphere" parent="Balls/thirteen_ball" index="0" unique_id=2117246952]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="fourteen_ball" parent="Balls" unique_id=1577973217 instance=ExtResource("18_8ktx7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, -0.75)
 
-[node name="Sphere" parent="Balls/fourteen_ball" index="0" unique_id=1613327994]
+[node name="Sphere" parent="Balls/fourteen_ball" index="0" unique_id=1198040905]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="fifteen_ball" parent="Balls" unique_id=1861692515 instance=ExtResource("6_r0x5m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0, -0.75)
 
-[node name="Sphere" parent="Balls/fifteen_ball" index="0" unique_id=48319040]
+[node name="Sphere" parent="Balls/fifteen_ball" index="0" unique_id=1267626526]
 mass = 0.16
+angular_damp = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=750947099]
 
