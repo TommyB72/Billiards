@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/pool_table.blend-655bf291362e4b189d6960c9acd2
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StaticBody3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

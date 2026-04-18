@@ -41,10 +41,12 @@ _subresources={
 "nodes": {
 "PATH:Sphere": {
 "generate/physics": true,
-"node/script": Resource("uid://baqb5okual1qc", "res://Scripts/ball.gd"),
+"node/script": null,
 "physics/body_type": 1,
-"physics/layer": 18,
+"physics/layer": 2,
 "physics/mask": 3,
+"physics/physics_material_override": Object(PhysicsMaterial,"resource_local_to_scene":false,"resource_name":"","friction":1.0,"rough":false,"bounce":0.3,"absorbent":false,"script":null)
+,
 "physics/shape_type": 4,
 "primitive/radius": 0.029
 }

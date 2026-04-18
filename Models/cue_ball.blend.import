@@ -44,6 +44,7 @@ _subresources={
 "physics/body_type": 1,
 "physics/layer": 6,
 "physics/mask": 7,
+"physics/physics_material_override": null,
 "physics/shape_type": 4,
 "primitive/radius": 0.029
 }
